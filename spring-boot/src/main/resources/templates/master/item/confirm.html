@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>itemマスタ登録確認画面</title>
+</head>
+<body>
+    <h1>itemマスタ登録確認画面</h1>
+    <a th:href="@{/}" href="../../menu.html">メニュー画面へ</a>
+
+    <form method="POST" th:action="@{regist}" action="./complete.html" th:object="${itemForm}">
+        <div>
+            <p>ID</p>
+            <div th:text="*{id}">3</div>
+        </div>
+
+        <div>
+            <p>ITEM NAME</p>
+            <div th:text="*{itemName}">えんぴつ</div>
+        </div>
+
+        <div>
+            <p>PRICE</p>
+            <div th:text="*{price}">100</div>円
+        </div>
+
+        <input type="hidden" th:field="*{id}" />
+        <input type="hidden" th:field="*{itemName}" />
+        <input type="hidden" th:field="*{price}" />
+
+        <button type="submit">登録</button>
+    </form>
+
+</body>
+</html>
