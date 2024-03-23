@@ -54,7 +54,7 @@ https://intellectual-curiosity.tokyo/2021/12/31/spring-boot%E3%81%A7%E3%83%87%E3
 
 SQLServer構成マネージャーを起動し、ネットワーク構成のSQLSERVERプロトコルの`TCP/IP`を`有効`に変えてサービス再起動する  
 
-![TCP/IP有効化](image-sqlserver/1.png)
+![TCPIP有効化](image-sqlserver/1.png)
 
 ## SSMSインストール
 
@@ -160,11 +160,13 @@ https://qiita.com/yaju/items/a86f26d6dd7977695457#application-request-routingarr
 
 ## hostsに追加
 
-簡単】WindowsでHostsファイルが編集できないときの対処法  
+【簡単】WindowsでHostsファイルが編集できないときの対処法  
 https://hayamizbg.net/hosts-file-techniques/  
 
 hostsファイルにlocalhostを示すループバックIPアドレスと、サーバー証明書作成時に作成したホスト名（フレンドリ名）を追記する  
-`127.0.0.1  red`  
+```
+127.0.0.1  red
+```
 
 ## 動作確認
 
