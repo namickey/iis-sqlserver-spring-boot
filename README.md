@@ -23,6 +23,16 @@
 5. hosts
   - 設定
 
+# リリース用の本番環境イメージ図
+
+![TCPIP有効化](honban.PNG)
+
+# 今回構築するローカル開発環境イメージ図
+
+一台のWindows端末内に構築を行う
+
+![TCPIP有効化](kaihatsu.PNG)
+
 ## 前提環境
 
 - windows10 or windows11
