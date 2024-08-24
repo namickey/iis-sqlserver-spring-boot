@@ -157,7 +157,12 @@ CertReq で作成した CSR の文字化けを回避する
 https://aquasoftware.net/blog/?p=1554  
 SAN(Subject Alternative Name)フィールド を含むSSL証明書を作成する - Windows Server  
 https://www.ipentec.com/document/windows-server-create-ssl-certification-including-san-dns-name-field  
-
+Certreqコマンドを使って.pfxファイル証明書を作成する方法  
+https://rms.ne.jp/sslserver/move/certreq-get-pxf-html/  
+Windows CertreqコマンドでCSRファイルを作成する  
+https://tex2e.github.io/blog/windows/create-csr-file  
+CertreqでCSRを作る方法  ※項目説明あり  
+https://yabuisya.blogspot.com/2020/12/certreqcsr.html  
 
 
 ## バインド追加

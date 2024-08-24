@@ -1,0 +1,5 @@
+
+◆CSR作成
+管理者権限でコマンドプロンプトを起動
+CertReq.exe -New request.inf request.csr
+
