@@ -128,7 +128,7 @@ https://qiita.com/mihooo24/items/01057be40c7d3862920e
 
 ブラウザで`http://localhost`にアクセスする  
 
-## サーバー証明書作成
+## サーバー証明書作成(IIS利用の場合)
 
 インターネットインフォメーションサービス（IIS）マネージャーを開き、トップ階層にある`サーバー証明書`を開く  
 サーバー証明書画面の右側にある`自己署名入り証明書の作成`を行う  
@@ -136,6 +136,29 @@ https://qiita.com/mihooo24/items/01057be40c7d3862920e
 - ストア先は`個人`
 
 ![自己証明書作成](image-iis/1.PNG)
+
+## サーバー証明書作成(windows上でCertReq.exeを利用する場合)
+
+- CSR発行
+  - request.infに内容を記載
+  - certreqコマンドで作成
+- 署名
+  - opensslコマンド
+- インポート（X.509形式 or PKCS#7形式 or DER形式 or BASE64形式）
+  - certreqコマンドでaccept
+- PKCS#12形式でのエクスポート
+  - certlmを起動し、形式を指定してエクスポート
+- IISへのPKCS#12形式証明書のインポート
+  - IISマネージャからインポート
+
+certreq.exe で SSL 証明書発行に必要な CSR を作る  
+https://www.vwnet.jp/Windows/WS16/2017092701/Certreq.htm  
+CertReq で作成した CSR の文字化けを回避する  
+https://aquasoftware.net/blog/?p=1554  
+SAN(Subject Alternative Name)フィールド を含むSSL証明書を作成する - Windows Server  
+https://www.ipentec.com/document/windows-server-create-ssl-certification-including-san-dns-name-field  
+
+
 
 ## バインド追加
 
