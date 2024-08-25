@@ -1,10 +1,17 @@
-
-◆CSR作成
+◆CertReqでCSR作成、OpenSSLで署名
+【CSR作成】
 管理者権限でコマンドプロンプトを起動
 CertReq.exe -New request.inf request.csr
 
 改行コードをCR+LFからLFに変換
 
-◆署名
+【署名】
+openssl x509 -req -in request.csr -noout -text
 openssl genrsa 2048 > cert.key
 openssl x509 -req -signkey cert.key -in request.csr -out server.cer
+
+
+◆OpenSSLでCSR作成、OpenSSLで署名
+openssl genrsa 2048 > server.private.key
+openssl req -new -key server.private.key -sha256 -out request_openssl.csr
+openssl x509 -req -in request_openssl.csr -noout -text
