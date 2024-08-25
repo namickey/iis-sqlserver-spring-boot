@@ -3,3 +3,8 @@
 管理者権限でコマンドプロンプトを起動
 CertReq.exe -New request.inf request.csr
 
+改行コードをCR+LFからLFに変換
+
+◆署名
+openssl genrsa 2048 > cert.key
+openssl x509 -req -signkey cert.key -in request.csr -out server.cer
