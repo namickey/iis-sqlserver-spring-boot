@@ -164,6 +164,21 @@ https://tex2e.github.io/blog/windows/create-csr-file
 CertreqでCSRを作る方法  ※項目説明あり  
 https://yabuisya.blogspot.com/2020/12/certreqcsr.html  
 
+## 参考：証明書
+
+サーバ証明書インストール手順（Microsoft IIS）新規  
+https://www.einspki.jp/support/iis10_inst/  
+Microsoft IIS 10.0 CSR 作成/証明書インストール手順書（新規・更新用）  
+https://www.cybertrust.co.jp/sureserver/support/technical/iis10.html#5._%E8%A8%BC%E6%98%8E%E6%9B%B8%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB  
+とほほのOpenSSL入門  
+https://www.tohoho-web.com/ex/openssl.html  
+自己CAを構築し、自己CAで署名付けした中間証明書とサーバ証明書を作成する  
+https://qiita.com/thetsuthetsu/items/5292aab4ba5f61ce11ca  
+公開鍵証明書-プライベート認証局(オレオレ認証局)を作り、証明書チェーンを作成するまでの流れ  
+https://zenn.dev/yuulab/articles/dd8b37761c4987  
+怒られないオレオレ証明書を作る  
+https://zenn.dev/umishirazu/articles/82acc01e8924ac  
+
 
 ## バインド追加
 
