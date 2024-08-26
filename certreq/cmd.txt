@@ -1,17 +1,37 @@
 ◆CertReqでCSR作成、OpenSSLで署名
 【CSR作成】
 管理者権限でコマンドプロンプトを起動
-CertReq.exe -New request.inf request.csr
-
-改行コードをCR+LFからLFに変換
-
+CertReq.exe -New request.inf request_certreq.csr
+openssl x509 -req -in request_certreq.csr -noout -text
 【署名】
-openssl x509 -req -in request.csr -noout -text
 openssl genrsa 2048 > cert.key
-openssl x509 -req -signkey cert.key -in request.csr -out server.cer
+openssl x509 -req -signkey cert.key -in request_certreq.csr -out server.cer
 
 
 ◆OpenSSLでCSR作成、OpenSSLで署名
+【CSR作成】
 openssl genrsa 2048 > server.private.key
 openssl req -new -key server.private.key -sha256 -out request_openssl.csr
 openssl x509 -req -in request_openssl.csr -noout -text
+【署名】
+openssl genrsa 2048 > cert.key
+openssl x509 -req -signkey cert.key -in request_openssl.csr -out server.cer
+openssl x509 -in server.cer -noout -text
+【PKCS#12】
+openssl pkcs12 -export -in server.cer -inkey cert.key -out server.pfx
+openssl x509 -in server.pfx -noout -text
+
+
+◆IISでCSR作成、OpenSSLで署名
+【CSR作成】
+IIS画面操作
+openssl x509 -req -in request_iis.csr -noout -text
+【署名】
+openssl genrsa 2048 > cert.key
+openssl x509 -req -signkey cert.key -in request_iis.csr -out server.cer
+openssl x509 -in server.cer -noout -text
+【PKCS#12】
+openssl pkcs12 -export -in server.cer -inkey cert.key -out server.pfx
+openssl x509 -in server.pfx -noout -text
+
+
